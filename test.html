@@ -101,7 +101,9 @@
         var num2 = document.getElementById("num2").value;
       
         // Perform the calculation and update the labels
-        var myDiff = parseFloat(0);
+        var myDiff1 = parseFloat(0);
+        var myDiff2 = parseFloat(0);
+        
         var myCalc1 = parseFloat(0);
         var myCalc2 = parseFloat(0);
   
@@ -109,15 +111,17 @@
         num2 = parseFloat(num2);
         
         if (num1 > num2) {
-          myDiff = num1-num2;
+          myDiff1 = num1-num2;
+          myDiff2 = num2-num1;
         } else {
-          myDiff = num2-num1;
+          myDiff1 = num2-num1;
+          myDiff2 = num1-num2;
         }
   
-        myCalc1 = num1 + parseFloat(0.2501 / (1 + 1.9251 * Math.E**(2.3716*(myDiff)))).toFixed(3);
-        myCalc2 = num2 + parseFloat(0.2501 / (1 + 1.9251 * Math.E**(2.3716*(myDiff)))).toFixed(3);
+        myCalc1 = num1 + parseFloat(0.2501 / (1 + 1.9251 * Math.E**(2.3716*(myDiff1)))).toFixed(3);
+        myCalc2 = num2 + parseFloat(0.2501 / (1 + 1.9251 * Math.E**(2.3716*(myDiff2)))).toFixed(3);
   
-        console.log((0.2501 / (1 + 1.9251 * Math.E**(2.3716*(myDiff)))).toFixed(3));
+        console.log((0.2501 / (1 + 1.9251 * Math.E**(2.3716*(myDiff1)))).toFixed(3));
         console.log(num1);
         console.log(myCalc1);
         console.log(5 + 6);
